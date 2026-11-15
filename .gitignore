@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.sfdx/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+frontend/node_modules/
+frontend/dist/
+backend/demo_statement.txt
+Paytm_Homepage.png

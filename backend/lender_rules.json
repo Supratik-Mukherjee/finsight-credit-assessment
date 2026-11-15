@@ -1,0 +1,116 @@
+{
+	"risk_assessment": {
+		"weights": {
+			"cibil": 0.35,
+			"debt_to_income": 0.2,
+			"bureau": 0.2,
+			"cashflow": 0.15,
+			"spending": 0.1
+		},
+		"bureau_flag_penalty": 24,
+		"default_cibil_score": 742,
+		"risk_bands": [
+			{ "minimum_score": 75, "label": "Low Risk" },
+			{ "minimum_score": 55, "label": "Moderate Risk" },
+			{ "minimum_score": 0, "label": "High Risk" }
+		]
+	},
+	"lenders": [
+		{
+			"name": "HDFC Bank",
+			"minimum_cibil": 720,
+			"maximum_expense_ratio": 0.45,
+			"maximum_loan_amount": 2500000,
+			"maximum_loan_display": "₹25L",
+			"interest_range": "8.5% - 9.4%",
+			"reason": "Prefers strong bureau scores and lower monthly obligations.",
+			"scoring": { "base": 30, "cibil_pass": 25, "cibil_fail": -10, "expense_pass": 15, "expense_fail": -12, "positive_surplus": 10, "no_default_bonus": 10, "bureau_flag_penalty": 8, "default_penalty": 35, "loan_fit_bonus": 10, "loan_over_limit_penalty": 20 },
+			"eligibility_thresholds": { "eligible": 75, "conditional": 55 }
+		},
+		{
+			"name": "ICICI Bank",
+			"minimum_cibil": 680,
+			"maximum_expense_ratio": 0.5,
+			"maximum_loan_amount": 2000000,
+			"maximum_loan_display": "₹20L",
+			"interest_range": "9.0% - 10.2%",
+			"reason": "Accepts moderate credit profiles when cash flow is steady.",
+			"scoring": { "base": 35, "cibil_pass": 25, "cibil_fail": -8, "expense_pass": 15, "expense_fail": -10, "positive_surplus": 10, "no_default_bonus": 8, "bureau_flag_penalty": 7, "default_penalty": 32, "loan_fit_bonus": 12, "loan_over_limit_penalty": 18 },
+			"eligibility_thresholds": { "eligible": 75, "conditional": 55 }
+		},
+		{
+			"name": "State Bank of India",
+			"minimum_cibil": 700,
+			"maximum_expense_ratio": 0.42,
+			"maximum_loan_amount": 3000000,
+			"maximum_loan_display": "₹30L",
+			"interest_range": "8.7% - 9.9%",
+			"reason": "Looks for conservative obligations and a stable repayment buffer.",
+			"scoring": { "base": 32, "cibil_pass": 26, "cibil_fail": -12, "expense_pass": 18, "expense_fail": -14, "positive_surplus": 12, "no_default_bonus": 8, "bureau_flag_penalty": 8, "default_penalty": 38, "loan_fit_bonus": 10, "loan_over_limit_penalty": 18 },
+			"eligibility_thresholds": { "eligible": 78, "conditional": 58 }
+		},
+		{
+			"name": "Axis Bank",
+			"minimum_cibil": 700,
+			"maximum_expense_ratio": 0.48,
+			"maximum_loan_amount": 2500000,
+			"maximum_loan_display": "₹25L",
+			"interest_range": "9.1% - 10.5%",
+			"reason": "Balances bureau quality with demonstrated monthly repayment capacity.",
+			"scoring": { "base": 34, "cibil_pass": 24, "cibil_fail": -9, "expense_pass": 14, "expense_fail": -10, "positive_surplus": 12, "no_default_bonus": 9, "bureau_flag_penalty": 7, "default_penalty": 34, "loan_fit_bonus": 11, "loan_over_limit_penalty": 20 },
+			"eligibility_thresholds": { "eligible": 76, "conditional": 56 }
+		},
+		{
+			"name": "Kotak Mahindra Bank",
+			"minimum_cibil": 730,
+			"maximum_expense_ratio": 0.45,
+			"maximum_loan_amount": 2000000,
+			"maximum_loan_display": "₹20L",
+			"interest_range": "9.0% - 10.8%",
+			"reason": "Uses a stricter bureau threshold and rewards a low obligation ratio.",
+			"scoring": { "base": 28, "cibil_pass": 30, "cibil_fail": -12, "expense_pass": 18, "expense_fail": -12, "positive_surplus": 10, "no_default_bonus": 10, "bureau_flag_penalty": 9, "default_penalty": 40, "loan_fit_bonus": 12, "loan_over_limit_penalty": 22 },
+			"eligibility_thresholds": { "eligible": 78, "conditional": 58 }
+		},
+		{
+			"name": "Tata Capital",
+			"minimum_cibil": 680,
+			"maximum_expense_ratio": 0.55,
+			"maximum_loan_amount": 1500000,
+			"maximum_loan_display": "₹15L",
+			"interest_range": "10.5% - 13.5%",
+			"reason": "More flexible on obligations, but prices for additional credit risk.",
+			"scoring": { "base": 40, "cibil_pass": 22, "cibil_fail": -8, "expense_pass": 12, "expense_fail": -8, "positive_surplus": 10, "no_default_bonus": 7, "bureau_flag_penalty": 6, "default_penalty": 28, "loan_fit_bonus": 12, "loan_over_limit_penalty": 15 },
+			"eligibility_thresholds": { "eligible": 72, "conditional": 52 }
+		},
+		{
+			"name": "Demo Flexi Finance",
+			"minimum_cibil": 620,
+			"maximum_expense_ratio": 0.6,
+			"maximum_loan_amount": 1000000,
+			"maximum_loan_display": "₹10L",
+			"interest_range": "12.0% - 16.0%",
+			"reason": "Demo NBFC profile with a wider risk appetite and higher indicative pricing.",
+			"scoring": { "base": 45, "cibil_pass": 20, "cibil_fail": -5, "expense_pass": 10, "expense_fail": -6, "positive_surplus": 8, "no_default_bonus": 5, "bureau_flag_penalty": 5, "default_penalty": 25, "loan_fit_bonus": 12, "loan_over_limit_penalty": 12 },
+			"eligibility_thresholds": { "eligible": 70, "conditional": 50 }
+		}
+	],
+	"bureau_persona_overrides": [
+		{
+			"match_pan": "CQWPC9281F",
+			"match_name": "MR. KABIR CHATTERJEE",
+			"cibil_score": 612,
+			"source_label": "Fictional alert configured for Kabir's persona; no external bureau was contacted.",
+			"alerts": [
+				"DEMO BUREAU ALERT: A defaulted personal loan is reported for this persona. This is fictional demo data, not a live bureau finding."
+			],
+			"defaulted_loan": {
+				"status": "Defaulted",
+				"loan_type": "Personal loan",
+				"lender": "Not specified in demo record",
+				"amount": null,
+				"reported_date": "Not provided"
+			},
+			"conflict_note": "This demo bureau alert conflicts with the statement note that the applicant has never taken a loan or credit card. Verify identity and source records before any real decision."
+		}
+	]
+}
